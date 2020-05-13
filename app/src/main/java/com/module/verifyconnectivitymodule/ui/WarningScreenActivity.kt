@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.module.verifyconnectivitymodule.R
 
-class WarningScreenActivity : AppCompatActivity() {
+open class WarningScreenActivity : AppCompatActivity() {
     companion object {
         private fun newIntent(
             context: Context
