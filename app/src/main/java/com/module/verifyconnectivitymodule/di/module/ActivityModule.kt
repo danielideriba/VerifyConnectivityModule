@@ -1,6 +1,6 @@
-package com.ideriba.module.verifyconnectivity.di.module
+package com.module.verifyconnectivitymodule.di.module
 
-import com.ideriba.module.verifyconnectivity.ui.WarningScreenActivity
+import com.module.verifyconnectivitymodule.ui.WarningScreenActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

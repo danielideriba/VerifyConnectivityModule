@@ -1,11 +1,11 @@
-package com.ideriba.module.verifyconnectivity.ui
+package com.module.verifyconnectivitymodule.ui
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.ideriba.module.verifyconnectivity.R
+import com.module.verifyconnectivitymodule.R
 
 class WarningScreenActivity : AppCompatActivity() {
     companion object {

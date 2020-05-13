@@ -1,4 +1,4 @@
-package com.ideriba.module.connectivity.receivers
+package com.module.verifyconnectivitymodule.receivers
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -7,7 +7,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 
-class ConnectivityReceiver: BroadcastReceiver() {
+open class ConnectivityReceiver: BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent?) {
         if (connectivityReceiverListener != null) {

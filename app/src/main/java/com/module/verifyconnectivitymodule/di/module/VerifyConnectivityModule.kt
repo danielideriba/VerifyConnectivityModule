@@ -1,4 +1,4 @@
-package com.ideriba.module.verifyconnectivity.di.module
+package com.module.verifyconnectivitymodule.di.module
 
 import android.app.Application
 import android.content.SharedPreferences
@@ -13,6 +13,7 @@ import javax.inject.Singleton
     ]
 )
 class VerifyConnectivityModule{
+
     @Singleton
     @Provides
     fun providePreferences(application: Application): SharedPreferences {
