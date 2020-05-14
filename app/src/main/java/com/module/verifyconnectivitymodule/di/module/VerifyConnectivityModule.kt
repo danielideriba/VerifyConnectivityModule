@@ -3,6 +3,7 @@ package com.module.verifyconnectivitymodule.di.module
 import android.app.Application
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
+import com.module.verifyconnectivitymodule.receivers.ConnectivityReceiver
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -16,8 +17,8 @@ class VerifyConnectivityModule{
 
     @Singleton
     @Provides
-    fun providePreferences(application: Application): SharedPreferences {
-        return PreferenceManager.getDefaultSharedPreferences(application)
+    fun provideConnectivityReceiver(): ConnectivityReceiver {
+        return ConnectivityReceiver()
     }
 
 }
