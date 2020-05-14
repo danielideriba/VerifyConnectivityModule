@@ -1,6 +1,6 @@
 # Verify Connectivity Module
 
-Module de verificação de connectividade 
+Module de verificação de connectividade Usando brodcastreceivers
 
 
 ## Requirements
@@ -30,10 +30,41 @@ dependencies {
 @Component(
   modules = [
     //...
-    ResultadosDeExamesModule::class
+    VerifyConnectivityModule::class
   ]
 )
 interface AppComponent {
 	//... 
+}
+```
+
+# Implementation
+
+```kotlin
+class YourActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityReceiverListener {
+    override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_youractivity)
+    
+            registerReceiver(ConnectivityReceiver(), IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
+        }
+    
+        override fun onResume() {
+            super.onResume()
+            ConnectivityReceiver.connectivityReceiverListener = this
+        }
+    
+        override fun onNetworkConnectionChanged(isConnected: Boolean) {
+            showMessage(isConnected)
+        }
+    
+        private fun showMessage(isConnected: Boolean) {
+            if (!isConnected) {
+                WarningScreenActivity.start(this)
+                Timber.d("You are offline now.")
+            } else {
+                Timber.d("You are online now.")
+            }
+        }
 }
 ```
