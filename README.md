@@ -1,6 +1,6 @@
 # Verify Connectivity Module
 
-Module de verificação de connectividade Usando brodcastreceivers
+This module verify app connectivity using brodcastreceivers. 
 
 
 ## Requirements
@@ -39,6 +39,27 @@ interface AppComponent {
 ```
 
 # Implementation
+
+This library is *private* you must config your *gradle.properties* on your project and add maven repo url and set credentials.
+Ex:.
+
+*gradle.properties*
+```kotlin
+authToken=jp_8jkk1tjtcqlmrghvio2j2njb7s
+```
+
+*build.gradle (project level)*
+```kotlin
+allprojects {
+    repositories {
+        ...
+        maven {
+            url "https://jitpack.io"
+            credentials { username authToken }
+        }
+    }
+}
+```
 
 ```kotlin
 class YourActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityReceiverListener {
