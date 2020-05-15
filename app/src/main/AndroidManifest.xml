@@ -7,5 +7,13 @@
         android:theme="@style/AppTheme.NoActionBar"
         android:name=".ui.WarningScreenActivity"
         android:screenOrientation="portrait" />
+
+        <receiver android:name=".receivers.ConnectivityReceiver" >
+            <intent-filter>
+                <action android:name="com.module.ConnectivityBroadcast" >
+                </action>
+            </intent-filter>
+        </receiver>
+
     </application>
 </manifest>
