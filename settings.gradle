@@ -1,2 +1,4 @@
 rootProject.name='VerifyConnectivityModule'
+include ':example'
 include ':app'
+

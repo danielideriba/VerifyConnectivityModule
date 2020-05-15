@@ -61,6 +61,13 @@ allprojects {
 }
 ```
 
+*build.gradle (app level)*
+```kotlin
+dependencies {
+	   implementation 'com.github.danielideriba:VerifyConnectivityModule:VERSION'
+}
+```
+
 ```kotlin
 class YourActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityReceiverListener {
     override fun onCreate(savedInstanceState: Bundle?) {
