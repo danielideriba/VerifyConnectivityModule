@@ -2,16 +2,18 @@
     package="com.module.verifyconnectivitymodule">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application>
     <activity
         android:theme="@style/AppTheme.NoActionBar"
         android:name=".ui.WarningScreenActivity"
         android:screenOrientation="portrait" />
 
-        <receiver android:name=".receivers.ConnectivityReceiver" >
+        <receiver
+            android:name=".receivers.ConnectivityReceiver"
+            android:enabled="true">
             <intent-filter>
-                <action android:name="com.module.ConnectivityBroadcast" >
-                </action>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
 

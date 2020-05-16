@@ -6,8 +6,10 @@ import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.app.example.R
+import com.module.verifyconnectivitymodule.di.module.VerifyConnectivityModule
 import com.module.verifyconnectivitymodule.receivers.ConnectivityReceiver
 import com.module.verifyconnectivitymodule.ui.WarningScreenActivity
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityReceiverListener  {
 
@@ -17,9 +19,16 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var intent = IntentFilter()
-        intent.addAction("com.module.ConnectivityBroadcast")
-        registerReceiver(currentBroadcast, intent)
+        configReceiver()
+    }
+
+    private fun configReceiver(){
+        registerReceiver(currentBroadcast, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
+    }
+
+    override fun onResume() {
+        super.onResume()
+        ConnectivityReceiver.connectivityReceiverListener = this
     }
 
     override fun onNetworkConnectionChanged(isConnected: Boolean) {

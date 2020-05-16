@@ -1,5 +1,6 @@
 package com.app.example.di.module
 
+import com.app.example.di.scopes.ActivityScope
 import com.app.example.ui.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -11,10 +12,12 @@ import dagger.android.ContributesAndroidInjector
  *      internal abstract fun contribute[NAME_ACTIVITY](): [NAME_ACTIVITY]
  */
 
+@Suppress("unused")
 @Module
 abstract class ActivityModule {
+    @ActivityScope
+    @ContributesAndroidInjector
+    abstract fun contributeMainActivity(): MainActivity
 
-    @ContributesAndroidInjector()
-    internal abstract fun contributeMainActivity(): MainActivity
 
 }
