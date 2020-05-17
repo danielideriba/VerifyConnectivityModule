@@ -13,7 +13,7 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityReceiverListener  {
 
-    private val currentBroadcast: BroadcastReceiver = ConnectivityReceiver()
+    private var currentBroadcast: BroadcastReceiver? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
